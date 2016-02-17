@@ -1,0 +1,10 @@
+function emptyInventory()
+	tar = "minecraft:stone"
+	local isBlock, data = turtle.inspect()
+	if isBlock and data.name == tar then
+		for i = 1, 13 do
+			turtle.select(i)
+			turtle.drop()
+		end
+	end
+end

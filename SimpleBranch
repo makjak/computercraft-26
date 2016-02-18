@@ -1,0 +1,112 @@
+args = {...}
+length = args[1]
+branches = args[2]
+
+fuelState = 1
+
+function fuelState()
+	turtle.select(16)
+	if turtle.getItemCount()<1 then
+		return 0 end
+	elseif turtle.getFuelLevel()<20
+		return 1 end
+	else return 2
+	end
+end
+
+function f()
+	turtle.forward()
+end
+
+function df()
+	turtle.dig()
+	f()
+end
+
+function turn()
+	turtle.turnLeft()
+	turtle.turnLeft()
+end
+
+function du()
+	turtle.digUp()
+	turtle.up()
+end
+
+function tunnel(length, boolean)
+	local b = boolean
+	for i=1, length do
+		df()
+		if ~boolean and i%10==0 then
+			turtle.select(15)
+			turtle.placeDown()
+			fuelState = fuelState()
+			if fuelState==0 then
+				continue = false
+				break end
+			elseif fuelState==1 then
+				turtle.select(16)
+				turtle.refuel(1)
+			end
+		elseif i%10==0 then
+			fuelState = fuelState()
+			if fuelState==0 then
+				break end
+			elseif fuelState==1 then
+				turtle.select(16)
+				turtle.refuel(1)
+			end
+		end
+	end
+	if b then
+		b = false
+		du()
+		turn()
+		turtle.select(15)
+		turtle.placeDown()
+		tunnel(length, b)
+	end
+end
+
+function emptyInventory(n)
+	for i=1, n do
+		turtle.select(i)
+		turtle.drop()
+	end
+end
+
+function seekChest()
+	local blocksMoved
+	local target = "minecraft:chest"
+	local isBlock, data = turtle.inspect()
+	turtle.turnLeft()
+	local found = false
+	while ~found do
+		if data==target then
+			found = true
+			break
+		else 
+			f()
+			blocksMoved = blocksMoved+1
+		end
+	end
+	if found then
+		emptyInventory(14)
+		turn()
+		return blocksMoved
+	end
+end
+
+function branching(lengthOfTunnels, numberOfBranches)
+	for i=1, numberOfBranches do
+		tunnel(lengthOfTunnels, true)
+		if ~continue then break end
+		local back = seekChest()
+		for i=1, back+3 do
+			f()
+		end
+		turtle.turnRight()
+	end
+end
+
+branching(length, branches)

@@ -42,7 +42,7 @@ function tunnel(length, boolean)
 	local b = boolean
 	for i=1, length do
 		df()
-		if not boolean and i%10==0 then
+		if not boolean and i%11==0 then
 			turtle.select(15)
 			turtle.placeDown()
 			fuelState = getFuelState()
@@ -56,6 +56,7 @@ function tunnel(length, boolean)
 		elseif i%5==0 then
 			fuelState = getFuelState()
 			if fuelState==0 then
+				continue = false
 				break
 			elseif fuelState==1 then
 				turtle.select(16)

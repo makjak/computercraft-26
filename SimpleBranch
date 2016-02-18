@@ -4,7 +4,7 @@ branches = args[2]
 
 fuelState = 1
 
-function fuelState()
+function getFuelState()
 	turtle.select(16)
 	if turtle.getItemCount()<1 then
 		return 0
@@ -40,7 +40,7 @@ function tunnel(length, boolean)
 		if not boolean and i%10==0 then
 			turtle.select(15)
 			turtle.placeDown()
-			fuelState = fuelState()
+			fuelState = getFuelState()
 			if fuelState==0 then
 				continue = false
 				break
@@ -49,7 +49,7 @@ function tunnel(length, boolean)
 				turtle.refuel(1)
 			end
 		elseif i%5==0 then
-			fuelState = fuelState()
+			fuelState = getFuelState()
 			if fuelState==0 then
 				break
 			elseif fuelState==1 then

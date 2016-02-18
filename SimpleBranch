@@ -104,8 +104,12 @@ function branching(lengthOfTunnels, numberOfBranches)
 		tunnel(lengthOfTunnels, true)
 		if not continue then break end
 		local back = seekChest()
-		for i=1, back+3 do
+		for i=1, back do
 			f()
+		end
+		for i=1, 3 do
+			df()
+			turtle.digUp()
 		end
 		turtle.turnRight()
 	end

@@ -98,6 +98,7 @@ function seekChest()
 end
 
 function branching(lengthOfTunnels, numberOfBranches)
+	continue = true
 	for i=1, numberOfBranches do
 		tunnel(lengthOfTunnels, true)
 		if not continue then break end

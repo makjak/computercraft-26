@@ -19,6 +19,7 @@ function f()
 end
 
 function df()
+	local isBlock, data = turtle.inspect()
 	turtle.dig()
 	while data.name=="minecraft:gravel" do
 		turtle.dig()
@@ -37,7 +38,6 @@ function du()
 end
 
 function tunnel(length, boolean)
-	local isBlock, data = turtle.inspect()
 	local b = boolean
 	for i=1, length do
 		df()

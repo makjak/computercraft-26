@@ -22,6 +22,7 @@ function df()
 	local isBlock, data = turtle.inspect()
 	turtle.dig()
 	while data.name=="minecraft:gravel" do
+		isBlock, data = turtle.inspect()
 		turtle.dig()
 	end
 	f()

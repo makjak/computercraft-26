@@ -20,6 +20,9 @@ end
 
 function df()
 	turtle.dig()
+	while data.name=="minecraft:gravel" do
+		turtle.dig()
+	end
 	f()
 end
 
@@ -34,6 +37,7 @@ function du()
 end
 
 function tunnel(length, boolean)
+	local isBlock, data = turtle.inspect()
 	local b = boolean
 	for i=1, length do
 		df()
@@ -58,7 +62,7 @@ function tunnel(length, boolean)
 			end
 		end
 	end
-	if b then
+	if b and continue then
 		b = false
 		du()
 		turn()
@@ -77,14 +81,13 @@ end
 
 function seekChest()
 	local blocksMoved = 0
-	local target = "minecraft:chest"
 	local isBlock, data = turtle.inspect()
 	turtle.down()
 	turtle.turnLeft()
 	local found = false
 	while not found do
 		isBlock, data = turtle.inspect()
-		if data.name==target then
+		if data.name=="minecraft:chest" then
 			found = true
 		else 
 			f()

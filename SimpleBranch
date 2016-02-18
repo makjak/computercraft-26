@@ -48,7 +48,7 @@ function tunnel(length, boolean)
 				turtle.select(16)
 				turtle.refuel(1)
 			end
-		elseif i%10==0 then
+		elseif i%==5 then
 			fuelState = fuelState()
 			if fuelState==0 then
 				break

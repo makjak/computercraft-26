@@ -85,7 +85,6 @@ function seekChest()
 	while not found do
 		if data==target then
 			found = true
-			break
 		else 
 			f()
 			blocksMoved = blocksMoved+1

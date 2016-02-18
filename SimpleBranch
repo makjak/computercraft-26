@@ -83,6 +83,7 @@ function seekChest()
 	turtle.turnLeft()
 	local found = false
 	while not found do
+		isBlock, data = turtle.inspect()
 		if data.name==target then
 			found = true
 		else 

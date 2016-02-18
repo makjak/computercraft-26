@@ -94,6 +94,16 @@ function seekChest()
 		else 
 			f()
 			blocksMoved = blocksMoved+1
+			if blocksMoved%5==0 then
+				fuelState = getFuelState()
+				if fuelState==0 then
+					continue = false
+					break
+				elseif fuelState==1 then
+					turtle.select(16)
+					turtle.refuel(1)
+				end
+			end
 		end
 	end
 	if found then

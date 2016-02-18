@@ -83,7 +83,7 @@ function seekChest()
 	turtle.turnLeft()
 	local found = false
 	while not found do
-		if data==target then
+		if data.name==target then
 			found = true
 		else 
 			f()

@@ -37,7 +37,7 @@ function tunnel(length, boolean)
 	local b = boolean
 	for i=1, length do
 		df()
-		if ~boolean and i%10==0 then
+		if not boolean and i%10==0 then
 			turtle.select(15)
 			turtle.placeDown()
 			fuelState = fuelState()
@@ -81,7 +81,7 @@ function seekChest()
 	local isBlock, data = turtle.inspect()
 	turtle.turnLeft()
 	local found = false
-	while ~found do
+	while not found do
 		if data==target then
 			found = true
 			break
@@ -100,7 +100,7 @@ end
 function branching(lengthOfTunnels, numberOfBranches)
 	for i=1, numberOfBranches do
 		tunnel(lengthOfTunnels, true)
-		if ~continue then break end
+		if not continue then break end
 		local back = seekChest()
 		for i=1, back+3 do
 			f()

@@ -79,6 +79,7 @@ function seekChest()
 	local blocksMoved
 	local target = "minecraft:chest"
 	local isBlock, data = turtle.inspect()
+	turtle.down()
 	turtle.turnLeft()
 	local found = false
 	while not found do

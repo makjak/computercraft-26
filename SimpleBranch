@@ -7,9 +7,9 @@ fuelState = 1
 function fuelState()
 	turtle.select(16)
 	if turtle.getItemCount()<1 then
-		return 0 end
+		return 0
 	elseif turtle.getFuelLevel()<20
-		return 1 end
+		return 1
 	else return 2
 	end
 end

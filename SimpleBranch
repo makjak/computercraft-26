@@ -76,7 +76,7 @@ function emptyInventory(n)
 end
 
 function seekChest()
-	local blocksMoved
+	local blocksMoved = 0
 	local target = "minecraft:chest"
 	local isBlock, data = turtle.inspect()
 	turtle.down()

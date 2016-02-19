@@ -20,13 +20,14 @@ end
 
 function df()
 	local isBlock, data = turtle.inspect()
-	turtle.dig()
-	while data.name=="minecraft:gravel" do
-		isBlock, data = turtle.inspect()
+	if data.name=="minecraft:gravel" do
 		turtle.dig()
 		os.sleep(1)
+		df()
+	else
+		turtle.dig()
+		f()
 	end
-	f()
 end
 
 function turn()

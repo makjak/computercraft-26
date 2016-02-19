@@ -19,9 +19,10 @@ function f()
 end
 
 function df()
-	turtle.dig()
-	if not turtle.forward() then
-		df()
+	local k = false
+	while not k do
+		turtle.dig()
+		local k = turtle.forward()
 	end
 end
 

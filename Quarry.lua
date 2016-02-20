@@ -8,7 +8,7 @@ function df()
 	local k = false
 	while not k do
 		turtle.dig()
-		local k = turtle.forward()
+		k = turtle.forward()
 	end
 end
 
@@ -45,7 +45,7 @@ function triplet()
 	turtle.digDown()
 end
 
-function quarry(l, w, h)
+function quarry(l, w, h, fp)
 	local right = true
 	notTriplets = h%3
 	triplets = h-notTriplets
@@ -57,12 +57,13 @@ function quarry(l, w, h)
 				triplet()
 			end
 			if right then
+				print("kuk")
 				right = tr()
 				triplet()
 				tr()
 			else
 				right = tl()
-				triplet
+				triplet()
 				tl()
 			end
 		end
@@ -72,7 +73,7 @@ function quarry(l, w, h)
 			tr()
 			right = true
 		end
-		dd(3 + floorspace)
+		dd(3 + fp)
 	end
 	for i=1, notTriplets do
 		for j=1, w do
@@ -98,3 +99,5 @@ function quarry(l, w, h)
 		dd(1)
 	end
 end
+
+quarry(length, width, height, floorspace)

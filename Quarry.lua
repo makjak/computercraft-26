@@ -56,15 +56,16 @@ function quarry(l, w, h, fp)
 			for k=2, l do
 				triplet()
 			end
-			if right then
-				print("kuk")
-				right = tr()
-				triplet()
-				tr()
-			else
-				right = tl()
-				triplet()
-				tl()
+			if not k==l then
+				if right then
+					right = tr()
+					triplet()
+					tr()
+				else
+					right = tl()
+					triplet()
+					tl()
+				end
 			end
 		end
 		if right then

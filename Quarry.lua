@@ -66,9 +66,11 @@ function quarry(l, w, h, fp)
 					triplet()
 					tl()
 				end
+			else
+				print("det funkar")
 			end
 		end
-		if not right then
+		if right then
 			turn()
 		else
 			tr()

@@ -23,7 +23,6 @@ function tr()
 end
 
 function turn()
-	print("que")
 	turtle.turnLeft()
 	turtle.turnLeft()
 end
@@ -69,7 +68,7 @@ function quarry(l, w, h, fp)
 				end
 			end
 		end
-		if right then
+		if not right then
 			turn()
 		else
 			tr()

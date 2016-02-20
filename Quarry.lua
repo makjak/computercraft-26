@@ -56,8 +56,9 @@ function quarry(l, w, h, fp)
 			for k=2, l do
 				triplet()
 			end
-			if not k==l then
+			if j~=w then
 				if right then
+					print("kuk")
 					right = tr()
 					triplet()
 					tr()

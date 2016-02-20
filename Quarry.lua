@@ -23,6 +23,7 @@ function tr()
 end
 
 function turn()
+	print("que")
 	turtle.turnLeft()
 	turtle.turnLeft()
 end
@@ -56,14 +57,12 @@ function quarry(l, w, h, fp)
 			for k=2, l do
 				triplet()
 			end
-			if j~=w-1 then
+			if j~=w then
 				if right then
-					print("kuk")
 					right = tr()
 					triplet()
 					tr()
 				else
-					print("derja")
 					right = tl()
 					triplet()
 					tl()
@@ -71,10 +70,8 @@ function quarry(l, w, h, fp)
 			end
 		end
 		if right then
-			print("rett")
 			turn()
 		else
-			print("feil")
 			tr()
 			right = true
 		end

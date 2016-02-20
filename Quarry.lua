@@ -63,6 +63,7 @@ function quarry(l, w, h, fp)
 					triplet()
 					tr()
 				else
+					print("derja")
 					right = tl()
 					triplet()
 					tl()
@@ -70,6 +71,7 @@ function quarry(l, w, h, fp)
 			end
 		end
 		if right then
+			print("riktig")
 			turn()
 		else
 			tr()

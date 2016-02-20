@@ -56,7 +56,7 @@ function quarry(l, w, h, fp)
 			for k=2, l do
 				triplet()
 			end
-			if j~=w then
+			if j~=w-1 then
 				if right then
 					print("kuk")
 					right = tr()
@@ -71,9 +71,10 @@ function quarry(l, w, h, fp)
 			end
 		end
 		if right then
-			print("riktig")
+			print("rett")
 			turn()
 		else
+			print("feil")
 			tr()
 			right = true
 		end

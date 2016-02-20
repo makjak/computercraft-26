@@ -52,7 +52,7 @@ function quarry(l, w, h, fp)
 	dd(2)
 	turtle.digDown()
 	for i=1, triplets/3 do
-		for j=1, w do	
+		for j=1, w+1 do	
 			for k=2, l do
 				triplet()
 			end

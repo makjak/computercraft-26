@@ -48,27 +48,26 @@ end
 function quarry(l, w, h, fp)
 	local right = true
 	notTriplets = h%3
-	triplets = h-notTriplets
+	triplets = (h-notTriplets)/3
 	dd(2)
 	turtle.digDown()
-	for i=1, triplets/3 do
-		for j=1, w+1 do	
+	for i=1, triplets do
+		for j=2, w do	
 			for k=2, l do
 				triplet()
 			end
-			if j~=w then
-				if right then
-					right = tr()
-					triplet()
-					tr()
-				else
-					right = tl()
-					triplet()
-					tl()
-				end
+			if right then
+				right = tr()
+				triplet()
+				tr()
 			else
-				print("det funkar")
+				right = tl()
+				triplet()
+				tl()
 			end
+		end
+		for k=2, l do
+				triplet()
 		end
 		if right then
 			turn()

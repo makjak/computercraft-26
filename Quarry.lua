@@ -4,9 +4,6 @@ width = args[2]
 height = args[3]
 floorspace = args[4]
 
-tripletsNum = 0
-notTriplets = 0
-
 function df()
 	local k = false
 	while not k do

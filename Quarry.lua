@@ -4,6 +4,9 @@ width = args[2]
 height = args[3]
 floorspace = args[4]
 
+tripletsNum = 0
+notTriplets = 0
+
 function df()
 	local k = false
 	while not k do
@@ -48,10 +51,10 @@ end
 function quarry(l, w, h, fp)
 	local right = true
 	notTriplets = h%3
-	triplets = (h-notTriplets)/3
+	tripletsNum = (h-notTriplets)/3
 	dd(2)
 	turtle.digDown()
-	for i=1, triplets do
+	for i=1, tripletsNum do
 		for j=2, w do	
 			for k=2, l do
 				triplet()

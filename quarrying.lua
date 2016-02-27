@@ -51,6 +51,7 @@ function quarry(l, w, h, fp)
 	depth = h
 	notTriplets = depth%3
 	tripletsNum = (depth-notTriplets)/3
+
 	stagesSkipped = 0
 
 	dd(2)
@@ -69,6 +70,10 @@ function quarry(l, w, h, fp)
 				triplet()
 				tl()
 			end
+			isBlock, data = turtle.inspectDown()
+			if data.name == "minecraft:bedrock"
+				os.shutdown()
+			end
 		end
 		for k=2, l do
 				triplet()
@@ -77,6 +82,7 @@ function quarry(l, w, h, fp)
 			dd(1+fp)
 		elseif i~=tripletsNum then
 			dd(3+fp)
+			turtle.digDown()
 		end
 		if right then
 			turn()

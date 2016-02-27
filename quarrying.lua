@@ -74,7 +74,7 @@ function quarry(l, w, h, fp)
 				triplet()
 		end
 		if i==tripletsNum and notTriplets>0 then
-			dd(1)
+			dd(1+fp)
 		elseif i~=tripletsNum then
 			dd(3+fp)
 		end

@@ -47,16 +47,16 @@ end
 
 function quarry(l, w, h, fp)
 	local right = true
-	notTriplets = h%3
-	tripletsNum = (h-notTriplets)/3
-	depth = h-tripletsNum*fp
+
+	depth = h
 	notTriplets = depth%3
 	tripletsNum = (depth-notTriplets)/3
+	stagesSkipped = 0
 
 	dd(2)
 	turtle.digDown()
 	for i=1, tripletsNum do
-		for j=2, w do	
+		for j=2, w do
 			for k=2, l do
 				triplet()
 			end

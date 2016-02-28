@@ -49,7 +49,15 @@ function dropShit()
 	for i=1, 16 do
 		turtle.select(i)
 		local data = turtle.getItemDetail()
-		if not data.name=="minecraft:diamond" or data.name=="minecraft:redstone" or data.name=="minecraft:gold_ore" or data.name=="minecraft:iron_ore" or data.name=="minecraft:dye"then
+		if not data.name=="minecraft:diamond" then
+			turtle.drop()
+		elseif not data.name=="minecraft:redstone" then
+			turtle.drop()
+		elseif not data.name=="minecraft:gold_ore" then
+			turtle.drop()
+		elseif not data.name=="minecraft:iron_ore" then
+			turtle.drop()
+		elseif not data.name=="minecraft:dye" then
 			turtle.drop()
 		end
 	end
@@ -81,7 +89,7 @@ function quarry(l, w, h, fp)
 				tl()
 			end
 			local isBlock, data = turtle.inspectDown()
-			if data.name == "minecraft:bedrock"
+			if data.name == "minecraft:bedrock" then
 				os.shutdown()
 			end
 		end

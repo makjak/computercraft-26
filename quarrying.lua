@@ -46,15 +46,15 @@ function triplet()
 end
 
 function dropShit()
-	local data = turtle.getItemDetail()
-	if not data then
-		for i=1, 16 do
-			turtle.select(i)
+	for i=1, 16 do
+		turtle.select(i)
+		local data = turtle.getItemDetail()
+		if not data then
 			if data.name=="minecraft:diamond" or data.name=="minecraft:redstone" or data.name=="minecraft:gold_ore" or data.name=="minecraft:iron_ore" or data.name=="minecraft:dye" then
 				return
 			else
 				turtle.drop()
-			end	
+			end
 		end
 	end
 end

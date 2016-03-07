@@ -48,18 +48,12 @@ end
 function dropShit()
 	for i=1, 16 do
 		turtle.select(i)
-		local isBlock, data = turtle.getItemDetail()
-		if not data.name=="minecraft:diamond" then
+		local data = turtle.getItemDetail()
+		if data.name=="minecraft:diamond" or data.name=="minecraft:redstone" or data.name=="minecraft:gold_ore" or data.name=="minecraft:iron_ore" or data.name=="minecraft:dye" then
+			return
+		else
 			turtle.drop()
-		elseif not data.name=="minecraft:redstone" then
-			turtle.drop()
-		elseif not data.name=="minecraft:gold_ore" then
-			turtle.drop()
-		elseif not data.name=="minecraft:iron_ore" then
-			turtle.drop()
-		elseif not data.name=="minecraft:dye" then
-			turtle.drop()
-		end
+		end	
 	end
 end
 

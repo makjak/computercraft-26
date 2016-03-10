@@ -22,7 +22,7 @@ function df()
 	local k = false
 	while not k do
 		turtle.dig()
-		local k = turtle.forward()
+		k = turtle.forward()
 	end
 end
 

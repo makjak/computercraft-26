@@ -1,3 +1,11 @@
+-- A chest must be placed at
+-- the right (ex: to the south if
+-- the branching turtle is facing
+-- east) side of the turtle for this
+-- program to work.
+-- Torches in slot 15
+-- eventual fuel in slot 16
+
 args = {...}
 length = args[1]
 branches = args[2]
